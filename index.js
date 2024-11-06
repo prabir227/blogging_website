@@ -7,6 +7,9 @@ const cookieParser = require('cookie-parser');
 const {checkAuthCookie} = require('./middlewares/auth');
 const blogRouter = require('./routes/blog');
 const Blog = require('./models/blog');
+const dotenv = require('dotenv');
+
+dotenv.config();
 app.set('view engine', 'ejs');
 app.set('views', path.resolve("./views"));
 
@@ -28,7 +31,7 @@ app.get('/', async (req, res) => {
 
 
 
-mongoose.connect('mongodb://localhost:27017/blogger');
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+mongoose.connect(process.env.DB_URL);
+app.listen(process.env.PORT, () => {
+  console.log('Server is running on port '+process.env.PORT);
 });

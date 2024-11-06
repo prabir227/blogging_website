@@ -1,9 +1,11 @@
 const jwt = require('jsonwebtoken');
-const SECRET_KEY = "prabir";
+require('dotenv').config();
+const SECRET_KEY = process.env.SECRET_KEY;
 
 function generateToken(user){
     const payload = {
         _id : user._id,
+        name : user.name,
         email : user.email,
         role : user.role,
         profileImageURL : user.profileImageURL
