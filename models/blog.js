@@ -1,4 +1,4 @@
-const {Schema, Model, model} = require('mongoose');
+const {Schema, model} = require('mongoose');
 
 const blogSchema = new Schema({
     title :{
@@ -14,7 +14,7 @@ const blogSchema = new Schema({
     },
     author:{
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: "User"
     }
 }, {timestamps: true});
 
