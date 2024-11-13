@@ -2,7 +2,7 @@
 <html lang="en" data-bs-theme="dark">
 <head>
     <%- include('./partials/head.ejs') %>
-    <title>Homepage</title>
+    <title>My Blogs</title>
 </head>
 <body>
     <%- include('./partials/script.ejs') %>
@@ -10,7 +10,7 @@
     <div class="container mt-3">
         <div class="row row-cols-3">
             <% blogs.forEach(blog => { %>
-                <div class="col mb-5">
+                <div class="col">
                     <div class="card" style="width: 300px;">
                         <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="...">
                         <div class="card-body">

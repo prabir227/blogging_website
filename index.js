@@ -31,9 +31,10 @@ app.get('/', async (req, res) => {
 
 
 
-if(mongoose.connect(process.env.DB_URL)){
-
-app.listen(process.env.PORT, () => {
-  console.log('Server is running on port '+process.env.PORT);
+mongoose.connect(process.env.DB_URL).then(() => {
+  app.listen(process.env.PORT, () => {
+    console.log('Server is running on port '+process.env.PORT);
+  });
+}).catch((err) => {
+  console.log("unable to connect to database",err);
 });
-};
