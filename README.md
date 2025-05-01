@@ -74,6 +74,3 @@ This project is a fully functional blogging website developed using Node.js. Use
 - Implement categories and tags for blogs.
 - Enable likes and shares on blogs.
 
-## License
-This project is open-source and available under the MIT License.
-
